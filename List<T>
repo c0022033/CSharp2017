@@ -1,0 +1,30 @@
+public struct Student
+{
+    public string Name;
+    public int Score;
+
+    public Student(string name, int score)
+    {
+        this.Name = name;
+        this.Score = score;
+    }
+};
+
+static void Main(string[] args)
+{
+    List<Student> students = new List<Student>(){ new Student("Tim", 80),
+                                                             new Student("Jimmy", 76),
+                                                             new Student("David", 92),
+                                                             new Student("Jason", 57),
+                                                             new Student("Amy", 40)};
+
+    // 利用 Lambda 運算式，由大到小排序
+    students.Sort((x, y) => { return -x.Score.CompareTo(y.Score); });
+
+    foreach (var item in students)
+    {
+        Console.WriteLine(item.Name + " : " + item.Score);
+    }
+    
+    Console.Read();
+}
