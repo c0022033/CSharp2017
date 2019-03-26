@@ -1,0 +1,25 @@
+static void Main(string[] args)
+{
+    int[] array = new int[10] { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
+    List<int> list = new List<int>() { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
+
+    // 由小到大
+    list.Sort();
+
+    foreach (var item in list)
+    {
+        Console.WriteLine(item.ToString());
+    }
+
+    Console.WriteLine("===================");
+
+    // 由大到小
+    list.Reverse();
+
+    foreach (var item in list)
+    {
+        Console.WriteLine(item.ToString());
+    }
+
+    Console.Read();
+}
